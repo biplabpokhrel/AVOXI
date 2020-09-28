@@ -15,7 +15,7 @@ should return
 
 Before running about command you need to run the servers.
 
-Make sure you have docker and docker-compose install on your machine
+Make sure you have `docker` and `docker-compose` install on your machine
 
 Steps
 
@@ -24,12 +24,12 @@ Steps
 - Run `docker-compose build && docker-compose up -d`
 - After this check the log message, everything should be running properly
 - Now, connect with the database, db cred info is in  `.env` file
-- Go inside the rest folder and rust the .sql file's content in you database client
-- Now your table must have atleant 3 rows 
+- Go inside the rest folder you will find `.sql`, Copy the file's content and run into the database ( use `PostBird` - It's Postgre database client ) - Database cred are in `.evn` file.
+- Now your table must have 3 rows 
 - Now run the above curl code, you should see  
 ```
 {
-    "IP": "Not Allowed"
+    "IP": "Allowed"
 }
 ```
 
@@ -44,3 +44,4 @@ Now, rebuild your docker image
 Now, check the log `docker-compose logs rest-avoxi`, you should see text
 `IP to Country search will happen in`
 
+## Happy Coding
