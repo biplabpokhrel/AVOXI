@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package IpChecker;
+
+// Country contain name of the country
+message Country {
+   string name = 1;
+}
+
+message IpCheckRequest {
+    // countries will be the list of Country Name
+    repeated Country countries = 1;
+
+    // ipAddress can be ipV4 or ipV6
+    string ipAddress = 2;
+}
+
+// Status going to indicate whether the given Ip is blacklist or not
+message Status {
+    // true value indicate ip is blacklist and
+    // false value indicate ip is not blacklist
+    bool isBlackListed = 1;
+}
+
+
+service IPCheckerService {
+    rpc CheckIp(IpCheckRequest) returns (Status);
+}

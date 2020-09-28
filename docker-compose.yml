@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  redis-avoxi:
+    image: redis
+    ports:
+        - 6380:6379
+    networks:
+        - redis-avoxi-network
+
+  db-avoxi:
+    image: postgres
+    restart: always
+    env_file:
+        - .env
+    ports:
+        - 5433:5432
+    networks:
+        - db-avoxi-network
+
+  rest-avoxi:
+    build:
+        context: ./rest
+    image: avoxi-ip-checker
+    command: go run main.go
+    links:
+        - db-avoxi
+    env_file:
+        - .env
+    networks:
+        - rest-avoxi-network
+    expose:
+        - "8052"
+    ports:
+        - 8052:8052
+
+networks:
+    redis-avoxi-network:
+    db-avoxi-network:
+    rest-avoxi-network:
