@@ -28,6 +28,7 @@ services:
         - .env
     networks:
         - rest-avoxi-network
+        - db-avoxi-network
     expose:
         - "8052"
     ports:
