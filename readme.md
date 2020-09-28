@@ -44,4 +44,13 @@ Now, rebuild your docker image
 Now, check the log `docker-compose logs rest-avoxi`, you should see text
 `IP to Country search will happen in`
 
-## Happy Coding
+
+### NOTE: This code is not for production use
+
+TODO: Multi-stage docker image
+TODO: Improvise the data lookup
+TODO: Implement GRPC
+TODO: More error handling logic
+
+## Happy Coding!!!
+
